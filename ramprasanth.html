@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ram Prasanth R — HR Business Partner</title>
+<meta name="description" content="Ram Prasanth R — Strategic HR Business Partner. People Analytics, Culture Transformation, Talent Management.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0b2036;
+    --navy-light: #13315c;
+    --gold: #b8902e;
+    --gold-light: #e4c469;
+    --ink: #16212f;
+    --sub: #5c6774;
+    --bg: #ffffff;
+    --bg-alt: #f6f7f9;
+    --line: #e3e6ea;
+    --shadow: 0 1px 2px rgba(16,24,40,0.04), 0 1px 3px rgba(16,24,40,0.06);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  h1, h2, h3 { font-family: "Sora", "Inter", sans-serif; }
+
+  /* ---- Header ---- */
+  header.hero {
+    background: linear-gradient(120deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: #fff;
+    padding: 56px 40px;
+  }
+  .hero-inner {
+    max-width: 1120px; margin: 0 auto;
+    display: flex; align-items: center; gap: 36px; flex-wrap: wrap;
+  }
+  .photo-box {
+    width: 156px; height: 156px; border-radius: 14px; flex-shrink: 0;
+    border: 3px solid var(--gold); overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,0.06);
+    box-shadow: var(--shadow);
+  }
+  .photo-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo-box .initials { font-family: "Sora", sans-serif; font-weight: 700; font-size: 2.6rem; color: var(--gold-light); }
+
+  .hero-text { flex: 1; min-width: 260px; }
+  .hero-text .badge {
+    display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--navy); background: var(--gold-light); padding: 5px 12px; border-radius: 6px; margin-bottom: 14px;
+  }
+  .hero-text h1 { font-size: 2.2rem; font-weight: 800; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .hero-text .role { font-size: 1.05rem; color: #cbd5e1; font-weight: 500; margin: 0 0 22px; max-width: 52ch; }
+  .contact-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 7px; text-decoration: none;
+    font-size: 0.85rem; font-weight: 500; color: #e2e8f0;
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.22);
+    padding: 8px 14px; border-radius: 8px; transition: background 0.2s ease;
+  }
+  .chip:hover { background: rgba(255,255,255,0.16); }
+  .chip svg { width: 14px; height: 14px; color: var(--gold-light); }
+  .btn-dl {
+    display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+    font-size: 0.85rem; font-weight: 700; color: var(--navy);
+    background: var(--gold-light); padding: 9px 16px; border-radius: 8px;
+    transition: filter 0.2s ease;
+  }
+  .btn-dl:hover { filter: brightness(1.06); }
+  .btn-dl svg { width: 14px; height: 14px; }
+
+  /* ---- Body layout ---- */
+  .body-grid {
+    max-width: 1120px; margin: 0 auto; padding: 48px 40px 90px;
+    display: grid; grid-template-columns: 300px 1fr; gap: 44px;
+  }
+  @media (max-width: 860px) { .body-grid { grid-template-columns: 1fr; padding: 36px 22px 70px; } .hero-inner { flex-direction: column; align-items: flex-start; } header.hero { padding: 40px 24px; } }
+
+  .panel {
+    background: var(--bg-alt); border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px; margin-bottom: 20px;
+  }
+  .panel h3 {
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.09em; font-weight: 700;
+    color: var(--navy); margin: 0 0 16px;
+  }
+
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .stat-grid .n { font-family: "Sora", sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--navy); }
+  .stat-grid .l { font-size: 0.72rem; color: var(--sub); font-weight: 600; margin-top: 2px; }
+
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-tags span {
+    font-size: 0.78rem; font-weight: 600; color: var(--navy); background: #fff;
+    border: 1px solid var(--navy); border-radius: 6px; padding: 5px 10px;
+  }
+
+  .side-item { padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 0.85rem; color: var(--sub); }
+  .side-item:last-child { border-bottom: none; }
+  .side-item strong { display: block; color: var(--ink); font-size: 0.88rem; font-weight: 600; margin-bottom: 1px; }
+  .side-item .yr { font-size: 0.72rem; color: var(--gold); font-weight: 700; }
+
+  .side-link {
+    display: block; text-decoration: none; font-size: 0.85rem; font-weight: 600; color: var(--ink);
+    padding: 10px 0; border-bottom: 1px solid var(--line);
+  }
+  .side-link:last-child { border-bottom: none; }
+  .side-link:hover { color: var(--navy); }
+
+  /* ---- Main content ---- */
+  main section { margin-bottom: 40px; opacity: 0; transform: translateY(14px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  main section.in-view { opacity: 1; transform: translateY(0); }
+  main h2 {
+    font-size: 1rem; font-weight: 800; color: var(--navy); margin: 0 0 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  main h2::before { content: ""; width: 4px; height: 18px; background: var(--gold); border-radius: 2px; display: inline-block; }
+  .summary { font-size: 1.02rem; color: var(--sub); max-width: 74ch; }
+
+  .job { border-left: 3px solid var(--gold); padding: 2px 0 2px 22px; margin-bottom: 30px; position: relative; }
+  .job:last-child { margin-bottom: 0; }
+  .job-head { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 6px 16px; }
+  .job-title { font-weight: 700; font-size: 1.03rem; color: var(--ink); }
+  .job-org { color: var(--navy-light); font-weight: 600; font-size: 0.88rem; margin-top: 2px; }
+  .job-date {
+    font-size: 0.74rem; font-weight: 700; color: var(--sub); background: var(--bg-alt);
+    border: 1px solid var(--line); padding: 4px 11px; border-radius: 6px; white-space: nowrap;
+  }
+  .job ul { margin: 12px 0 0; padding-left: 18px; color: var(--sub); font-size: 0.93rem; }
+  .job ul li { margin-bottom: 6px; }
+
+  footer { text-align: center; padding: 32px 24px; color: var(--sub); font-size: 0.8rem; border-top: 1px solid var(--line); }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="photo-box" id="photo-box"><span class="initials">RP</span></div>
+      <div class="hero-text">
+        <span class="badge">Available for opportunities</span>
+        <h1>Ram Prasanth R</h1>
+        <p class="role">Strategic HR Business Partner — People Analytics, Culture Transformation &amp; Talent Management</p>
+        <div class="contact-row">
+          <a class="chip" href="mailto:prasanth.chandran94@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg>prasanth.chandran94@gmail.com</a>
+          <a class="chip" href="tel:+918220898681"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+91 82208 98681</a>
+          <a class="chip" href="https://www.linkedin.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4v1.5A5.5 5.5 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Chennai, India</span>
+          <a class="btn-dl" href="assets/resume.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download Résumé</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="body-grid">
+
+    <aside>
+      <div class="panel">
+        <h3>Snapshot</h3>
+        <div class="stat-grid">
+          <div><div class="n">9+</div><div class="l">Years in HR</div></div>
+          <div><div class="n">3,500+</div><div class="l">Execs Assessed</div></div>
+          <div><div class="n">400+</div><div class="l">Global Participants</div></div>
+          <div><div class="n">54%</div><div class="l">AI Predictive Relevance</div></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Core Skills</h3>
+        <div class="skill-tags">
+          <span>Stakeholder Management</span>
+          <span>Talent Management</span>
+          <span>Culture &amp; Engagement</span>
+          <span>Employee Relations</span>
+          <span>People Analytics</span>
+          <span>AI Adoption Enablement</span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Education</h3>
+        <div class="side-item"><strong>XLRI, Jamshedpur</strong>PG Certification: HRM <span class="yr">· 03/2025</span></div>
+        <div class="side-item"><strong>Pondicherry (Central) University</strong>Master: Social Work (HRM) <span class="yr">· 04/2017</span></div>
+        <div class="side-item"><strong>Pondicherry (Central) University</strong>PG Diploma: IR &amp; Labour Law <span class="yr">· 06/2016</span></div>
+        <div class="side-item"><strong>SRR Engineering College</strong>Bachelor: Engineering (ECE) <span class="yr">· 04/2015</span></div>
+      </div>
+
+      <div class="panel">
+        <h3>Certifications</h3>
+        <div class="side-item"><strong>Certified Learning and Development Manager</strong></div>
+        <div class="side-item"><strong>Internal Auditor ISO IMS</strong></div>
+      </div>
+
+      <div class="panel">
+        <h3>Articles</h3>
+        <a class="side-link" href="#">Beyond Upskilling: The Missing Link in Hybrid Learning Cultures</a>
+        <a class="side-link" href="#">A Fresh Perspective on Performance Appraisal</a>
+      </div>
+    </aside>
+
+    <main>
+      <section id="summary">
+        <h2>Summary</h2>
+        <p class="summary">
+          Strategic HR Business Partner with 9+ years of experience across People Analytics, Organization
+          Development, Talent Management, and Culture Transformation. Builds data-driven frameworks —
+          culture diagnostics, predictive retention models, competency-based succession tools — that translate
+          into practical succession, performance, and engagement outcomes.
+        </p>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <div class="job-title">Assistant Manager — Global HRBP</div>
+              <div class="job-org">Prodapt Solutions Pvt Ltd, Chennai</div>
+            </div>
+            <span class="job-date">Nov 2024 – Current</span>
+          </div>
+          <ul>
+            <li>Built and implemented an ASE-to-SE auto-promotion framework impacting 100+ associates, stabilising the talent pyramid.</li>
+            <li>Designed and led Prodapt Pulse (Project Jellyfish), an enterprise-wide organisational diagnostic engaging 400+ participants globally.</li>
+            <li>Drove enterprise-wide AI tool adoption for all associates as a direct outcome of Pulse findings.</li>
+            <li>Contributed to 29% of overall retention efforts, bringing down attrition by 20 percentage points.</li>
+            <li>Designed and deployed a Power BI-based attrition dashboard with org-level and leadership-ready views.</li>
+            <li>Designed an HR flight-risk simulator using Claude (Anthropic AI), achieving up to 54% predictive relevance.</li>
+            <li>Automated QBR and governance deck preparation using Claude, MS Flow, and Python (VS Code).</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <div class="job-title">Team Member — HR, Org Design &amp; Development Cell</div>
+              <div class="job-org">NLC (India) Limited, Neyveli</div>
+            </div>
+            <span class="job-date">Jul 2022 – Aug 2024</span>
+          </div>
+          <ul>
+            <li>Facilitated PCMM audits across PAN-India, ensuring readiness and process maturity.</li>
+            <li>Executed Assessment &amp; Development Centres (ACDC) for 3,500+ executives PAN India for leadership identification, IDPs, and succession planning.</li>
+            <li>Delivered predictive analytics on attrition, recruitment funnel trends, and employee experience metrics.</li>
+            <li>Executed organisation-wide engagement designs, including R&amp;R frameworks and Ideation Melathon initiatives.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <div class="job-title">Associate Manager — HR BP (India &amp; US Region)</div>
+              <div class="job-org">HCL Technology, Chennai</div>
+            </div>
+            <span class="job-date">Oct 2021 – May 2022</span>
+          </div>
+          <ul>
+            <li>Partnered with India &amp; US delivery leadership on talent stability, manager capability, and workforce effectiveness.</li>
+            <li>Redesigned the onboarding experience to accelerate role assimilation and early-stage engagement.</li>
+            <li>Implemented proactive and reactive retention frameworks to stabilise BU attrition.</li>
+            <li>Strengthened performance management through calibration support and refined goal-setting standards.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <div class="job-title">Associate Professional — HR (India &amp; ANZ Region)</div>
+              <div class="job-org">DXC Technology, Chennai</div>
+            </div>
+            <span class="job-date">May 2019 – Apr 2021</span>
+          </div>
+          <ul>
+            <li>Managed HR operations, policy implementation, leave administration, and performance processes across ANZ and India.</li>
+            <li>Served as key liaison between managers and employees, resolving grievances and ensuring policy compliance.</li>
+            <li>Extracted and transformed raw data from multiple systems to generate meaningful HR reports.</li>
+            <li>Built and maintained a comprehensive HR knowledge base to promote employee self-service.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <div class="job-title">Executive — HR &amp; IR</div>
+              <div class="job-org">Multivista Global Pvt Ltd, Chennai</div>
+            </div>
+            <span class="job-date">May 2018 – Apr 2019</span>
+          </div>
+          <ul>
+            <li>Collaborated with leadership, contractors, and union representatives on workforce stability and statutory compliance.</li>
+            <li>Managed end-to-end employee lifecycle: new hires, transfers, separations, documentation.</li>
+            <li>Acted as Management Representative for ISO and SEDEX audits.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <div class="job-title">Executive — HR</div>
+              <div class="job-org">Trivitron Healthcare Pvt Ltd, Chennai</div>
+            </div>
+            <span class="job-date">Jul 2017 – May 2018</span>
+          </div>
+          <ul>
+            <li>Handled end-to-end onboarding, documentation, compliance, and transition for new hires.</li>
+            <li>Updated and maintained HRIS records, including employee data and benefit changes.</li>
+            <li>Evaluated candidates through resume screening and competency-based phone interviews.</li>
+          </ul>
+        </div>
+
+      </section>
+    </main>
+
+  </div>
+
+  <footer>Ram Prasanth R · Chennai · Last updated <span id="updated"></span></footer>
+
+<script>
+  document.getElementById('updated').textContent = new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' });
+
+  (function() {
+    var img = new Image();
+    img.onload = function() {
+      document.getElementById('photo-box').innerHTML = '<img src="assets/profile.jpg" alt="Ram Prasanth R">';
+    };
+    img.src = 'assets/profile.jpg';
+  })();
+
+  var sections = document.querySelectorAll('main section');
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  sections.forEach(function(s) { io.observe(s); });
+</script>
+
+</body>
+</html>
